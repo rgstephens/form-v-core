@@ -1,0 +1,106 @@
+intents:
+- suggest_beer_form
+- suggest_beer_core
+- suggest_beer_core_noslots
+- version
+- f1_score
+- greet
+- goodbye
+- clear
+- thanks
+- deny
+- chitchat
+- affirm
+- show_slots
+- inform
+entities:
+- beer_type
+- beer_style
+slots:
+  beer_type:
+    type: categorical
+    values:
+    - ale
+    - lager
+    - malt
+    - stout
+  beer_style:
+    type: categorical
+    values:
+    - amber
+    - brown
+    - blonde
+    - brown
+    - cream
+    - dark
+    - pale
+    - strong
+    - wheat
+    - red
+    - ipa
+    - pilsner
+  requested_slot:
+    type: unfeaturized
+actions:
+- action_f1_score
+- action_version
+- action_set_slots
+- utter_slots
+- utter_clear
+- utter_thanks
+- utter_version
+- utter_goodbye
+- utter_greet
+- utter_chitchat
+- utter_default
+- utter_ale_amber
+- utter_ale_brown
+forms:
+- beer_suggestion_form
+responses:
+  utter_version:
+  - text: "Model 0.9.2 - Dec 18, 2019\nBot 0.9.0 - Dec 18, 2019"
+  utter_greet:
+  - text: Welcome to the Jokebot, you can ask for Geek jokes, Corny jokes, Ron Swanson
+      or Breaking Bad jokes. Also, Inspiring or Trump quotes.
+  - text: Ask me for Geek jokes, Corny jokes, Ron Swanson or Breaking Bad jokes or
+      quotes that are Inspiring or Trump quotes.
+  utter_chitchat:
+  - text: Sorry, I don't recognize that question, want to try again?
+  utter_default:
+  - text: Sorry, I can't answer that
+  - text: Sorry, I don't recognize that question, want to try again?
+  utter_slots:
+  - text: "- beer_type:  {beer_type}\n- beer_style: {beer_style}"
+  utter_clear:
+  - text: "clearing slots"
+  utter_goodbye:
+  - text: Talk to you later!
+  - text: Bye
+  utter_thanks:
+  - text: My pleasure.
+  utter_not_sure:
+  - text: I'm not sure
+  - text: I don't know that one
+  utter_ask_beer_type:
+  - buttons:
+    - payload: /inform{"beer_type":"ale"}
+      title: "Ale"
+    - payload: /inform{"beer_type":"lager"}
+      title: "Lager"
+    - payload: /inform{"beer_type":"malt"}
+      title: "Malt"
+    - payload: /inform{"beer_type":"stout"}
+      title: "Stout"
+    text: What type of beer do you like?
+  utter_ask_beer_style:
+  - buttons:
+    - payload: /inform{"beer_style":"amber"}
+      title: "Amber"
+    - payload: /inform{"beer_style":"brown"}
+      title: "Brown"
+    text: What style of beer do you like?
+  utter_ale_amber:
+  - text: You should try some amber ale
+  utter_ale_brown:
+  - text: You should try Newcastle Brown Ale
