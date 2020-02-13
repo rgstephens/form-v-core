@@ -135,14 +135,12 @@ class BeerSuggestionForm(FormAction):
 
     @staticmethod
     def required_slots(tracker):
-        logger.error("required_slots")
         return [
             "beer_type",
             "beer_style",
         ]
 
     def slot_mappings(self):
-        logger.error("slot_mappings")
         return {
             "beer_type": self.from_entity(entity="beer_type"),
             "beer_style": self.from_entity(entity="beer_style"),
@@ -155,7 +153,7 @@ class BeerSuggestionForm(FormAction):
         domain: Dict[Text, Any],
     ) -> List[Dict]:
 
-        logger.error("submit")
+        logger.error("form submit")
         beer_type = tracker.get_slot("beer_type")
         beer_style = tracker.get_slot("beer_style")
 

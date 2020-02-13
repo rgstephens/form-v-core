@@ -2,6 +2,8 @@
 
 Example bot showing the differences between implementing the same story with forms vs. featurized slots.
 
+The example bot suggests a beer you might like based upon the beer types and styles listed at this [site](https://www.thebeerstore.ca/beer-101/beer-types/)
+
 One aspect of this test is that we want the bot stories to take into account slots that are already
 set within the session. We will NOT reset slots between stories.
 

@@ -28,7 +28,6 @@ slots:
     type: categorical
     values:
     - amber
-    - brown
     - blonde
     - brown
     - cream
@@ -39,6 +38,7 @@ slots:
     - red
     - ipa
     - pilsner
+    - golden
   requested_slot:
     type: unfeaturized
 actions:
